@@ -21,6 +21,8 @@ export default class App extends Component{
     }
   }
 
+
+
   componentDidMount(){
     fetch('https://instalura-api.herokuapp.com/api/public/fotos/rafael')
       .then(resposta => resposta.json())
@@ -32,7 +34,7 @@ export default class App extends Component{
       <FlatList style={style.container}
         keyExtractor={item => item.id}
         data={this.state.fotos}
-        renderItem={ ({item}) =>
+        renderItem={({item}) =>
           <Post foto={item}/>
         }
       />  
